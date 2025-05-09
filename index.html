@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Prywatny Gabinet Lekarski</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F8FC0',
+                        secondary: '#6BB89F'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">-->
+    <!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="main/style.css">
+
+</head>
+
+<body class="bg-white">
+    <!-- Nagłówek (Header) -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="text-3xl font-['Pacifico'] text-primary">MediCare</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="#" class="px-3 py-2 text-gray-700 hover:text-primary font-medium transition-colors">Strona główna</a>
+                <a href="#about" class="px-3 py-2 text-gray-700 hover:text-primary font-medium transition-colors">O nas</a>
+                <a href="#services" class="px-3 py-2 text-gray-700 hover:text-primary font-medium transition-colors">Usługi</a>
+                <a href="#doctors" class="px-3 py-2 text-gray-700 hover:text-primary font-medium transition-colors">Lekarze</a>
+                <a href="#pricing" class="px-3 py-2 text-gray-700 hover:text-primary font-medium transition-colors">Cennik</a>
+                <a href="#contact" class="px-3 py-2 text-gray-700 hover:text-primary font-medium transition-colors">Kontakt</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex flex-col items-end">
+                    <span class="text-sm text-gray-600">+48 123 456 789</span>
+                    <span class="text-sm text-gray-600">kontakt@medicare.pl</span>
+                </div>
+                <a href="#appointment" class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Umów wizytę</a>
+
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col">
+                <a href="#" class="px-3 py-2 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Strona główna</a>
+                <a href="#about" class="px-3 py-2 text-gray-700 hover:text-primary font-medium border-b border-gray-100">O nas</a>
+                <a href="#services" class="px-3 py-2 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Usługi</a>
+                <a href="#doctors" class="px-3 py-2 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Lekarze</a>
+                <a href="#pricing" class="px-3 py-2 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Cennik</a>
+                <a href="#contact" class="px-3 py-2 text-gray-700 hover:text-primary font-medium">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sekcja powitalna (Hero Section) -->
+    <section class="hero-section pt-24 md:pt-28" style="background-image: url('https://public.readdy.ai/ai/img_res/b886f1d03a910b7429dfc145a7f32779.jpg');">
+        <div class="container mx-auto px-4 py-16 md:py-24 w-full">
+            <div class="hero-content flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Profesjonalna opieka medyczna na najwyższym poziomie</h1>
+                    <p class="text-lg text-gray-600 mb-6">Zapewniamy kompleksową opiekę medyczną dla całej rodziny. Nasi doświadczeni specjaliści oraz nowoczesny sprzęt gwarantują najwyższą jakość usług.</p>
+
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#appointment" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Umów wizytę online</a>
+                        <a href="#services" class="bg-white text-primary border border-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition-colors">Zobacz nasze usługi</a>
+                    </div>
+
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+                                <i class="ri-calendar-check-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-bold text-gray-800">15+</span>
+                                <span class="text-sm text-gray-600">lat doświadczenia</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+                                <i class="ri-user-smile-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-bold text-gray-800">10 000+</span>
+                                <span class="text-sm text-gray-600">zadowolonych pacjentów</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <!-- Przestrzeń dla obrazu, który jest już w tle -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Usług -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nasze Usługi</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Oferujemy szeroki zakres usług medycznych, aby zapewnić kompleksową opiekę zdrowotną dla Ciebie i Twojej rodziny.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+                        <i class="ri-heart-pulse-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Kardiologia</h3>
+                    <p class="text-gray-600 mb-4">Kompleksowa diagnostyka i leczenie chorób układu krążenia. Wykonujemy EKG, echo serca oraz testy wysiłkowe.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Więcej informacji
+                        <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+                        <i class="ri-mental-health-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Neurologia</h3>
+                    <p class="text-gray-600 mb-4">Diagnostyka i leczenie chorób układu nerwowego. Specjalizujemy się w bólach głowy, zawrotach głowy i neuropatiach.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Więcej informacji
+                        <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+                        <i class="ri-medicine-bottle-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Pediatria</h3>
+                    <p class="text-gray-600 mb-4">Kompleksowa opieka nad dziećmi od narodzin do 18 roku życia. Profilaktyka, diagnostyka i leczenie chorób wieku dziecięcego.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Więcej informacji
+                        <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+                        <i class="ri-microscope-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Diagnostyka laboratoryjna</h3>
+                    <p class="text-gray-600 mb-4">Szeroki zakres badań laboratoryjnych wykonywanych na miejscu. Wyniki dostępne online w ciągu 24 godzin.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Więcej informacji
+                        <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+                        <i class="ri-psychotherapy-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Ortopedia</h3>
+                    <p class="text-gray-600 mb-4">Diagnostyka i leczenie chorób układu kostno-stawowego. Specjalizujemy się w leczeniu urazów sportowych i chorób zwyrodnieniowych.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Więcej informacji
+                        <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+                        <i class="ri-eye-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Okulistyka</h3>
+                    <p class="text-gray-600 mb-4">Kompleksowe badania wzroku, diagnostyka i leczenie chorób oczu. Dobieramy okulary i soczewki kontaktowe.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Więcej informacji
+                        <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Zobacz wszystkie usługi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja O Nas -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="https://public.readdy.ai/ai/img_res/f0a1f94663a339097105dadf5a0267ed.jpg" alt="Nasz gabinet" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">O naszym gabinecie</h2>
+                    <p class="text-gray-600 mb-6">MediCare to nowoczesny gabinet lekarski działający na rynku od 2010 roku. Naszą misją jest zapewnienie pacjentom kompleksowej opieki medycznej na najwyższym poziomie, w przyjaznej i komfortowej atmosferze.</p>
+                    <p class="text-gray-600 mb-6">Zatrudniamy wysoko wykwalifikowanych specjalistów z różnych dziedzin medycyny, którzy nieustannie podnoszą swoje kwalifikacje, aby zapewnić najlepszą opiekę medyczną.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                <i class="ri-check-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Nowoczesny sprzęt</h4>
+                                <p class="text-sm text-gray-600">Korzystamy z najnowocześniejszych technologii medycznych</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                <i class="ri-check-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Doświadczeni specjaliści</h4>
+                                <p class="text-sm text-gray-600">Nasi lekarze mają wieloletnie doświadczenie</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                <i class="ri-check-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Komfortowe warunki</h4>
+                                <p class="text-sm text-gray-600">Przestronne i nowoczesne gabinety</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                <i class="ri-check-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Szybka diagnostyka</h4>
+                                <p class="text-sm text-gray-600">Wyniki badań dostępne w ciągu 24h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <img src="https://public.readdy.ai/ai/img_res/773a7fa706b250c84d772e184cee5621.jpg" alt="Certyfikat 1" class="h-16 w-auto">
+                        <img src="https://public.readdy.ai/ai/img_res/9a4aae4eb0fb0ea3301a689fa01e9a2d.jpg" alt="Certyfikat 2" class="h-16 w-auto">
+                        <img src="https://public.readdy.ai/ai/img_res/3909f0992767e71d4a599aa48b37d373.jpg" alt="Certyfikat 3" class="h-16 w-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zespół Lekarzy -->
+    <section id="doctors" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nasz Zespół</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Poznaj naszych doświadczonych specjalistów, którzy zapewnią Ci profesjonalną opiekę medyczną.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/231d3d0868e4eb96528cc5245b32310a.jpg" alt="Dr Anna Kowalska" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Dr Anna Kowalska</h3>
+                        <p class="text-primary font-medium mb-3">Kardiolog</p>
+                        <p class="text-gray-600 text-sm mb-4">Specjalista z 15-letnim doświadczeniem w diagnostyce i leczeniu chorób serca. Absolwentka Warszawskiego Uniwersytetu Medycznego.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Czytaj więcej
+                            <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/41e3ae5029bb78c08950cb38c972b890.jpg" alt="Dr Piotr Nowak" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Dr Piotr Nowak</h3>
+                        <p class="text-primary font-medium mb-3">Neurolog</p>
+                        <p class="text-gray-600 text-sm mb-4">Specjalista neurolog z doświadczeniem w leczeniu chorób układu nerwowego. Członek Polskiego Towarzystwa Neurologicznego.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Czytaj więcej
+                            <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/f2faa9baf4fa68fa0e14e7c09b9e593e.jpg" alt="Dr Magdalena Wiśniewska" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Dr Magdalena Wiśniewska</h3>
+                        <p class="text-primary font-medium mb-3">Pediatra</p>
+                        <p class="text-gray-600 text-sm mb-4">Specjalista pediatra z 10-letnim doświadczeniem w leczeniu dzieci. Absolwentka Uniwersytetu Medycznego w Poznaniu.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Czytaj więcej
+                            <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="https://public.readdy.ai/ai/img_res/571851917d6203f0deb81a1429f8cf62.jpg" alt="Dr Tomasz Lewandowski" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-1">Dr Tomasz Lewandowski</h3>
+                        <p class="text-primary font-medium mb-3">Ortopeda</p>
+                        <p class="text-gray-600 text-sm mb-4">Specjalista ortopeda z doświadczeniem w leczeniu urazów sportowych. Członek Polskiego Towarzystwa Ortopedycznego.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Czytaj więcej
+                            <i class="ri-arrow-right-line ri-lg ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Zobacz wszystkich specjalistów</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- System rezerwacji -->
+    <section id="appointment" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Umów wizytę online</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Zarezerwuj termin wizyty u wybranego specjalisty w dogodnym dla Ciebie czasie.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Wybierz specjalistę i termin</h3>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2 font-medium">Wybierz specjalizację</label>
+                            <div class="relative">
+                                <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700 appearance-none pr-8">
+                                    <option value="">Wybierz specjalizację</option>
+                                    <option value="kardiologia">Kardiologia</option>
+                                    <option value="neurologia">Neurologia</option>
+                                    <option value="pediatria">Pediatria</option>
+                                    <option value="ortopedia">Ortopedia</option>
+                                    <option value="okulistyka">Okulistyka</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line ri-lg text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2 font-medium">Wybierz lekarza</label>
+                            <div class="relative">
+                                <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700 appearance-none pr-8">
+                                    <option value="">Wybierz lekarza</option>
+                                    <option value="dr-kowalska">Dr Anna Kowalska</option>
+                                    <option value="dr-nowak">Dr Piotr Nowak</option>
+                                    <option value="dr-wisniewska">Dr Magdalena Wiśniewska</option>
+                                    <option value="dr-lewandowski">Dr Tomasz Lewandowski</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line ri-lg text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2 font-medium">Wybierz datę</label>
+                            <div class="relative">
+                                <input type="date" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2 font-medium">Dostępne godziny</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">8:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">9:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">10:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">11:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">12:00</button>
+                                <button class="px-2 py-2 bg-primary text-white border border-primary rounded whitespace-nowrap">13:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">14:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">15:00</button>
+                                <button class="px-2 py-2 border border-gray-200 rounded text-gray-700 hover:bg-primary hover:text-white hover:border-primary transition-colors whitespace-nowrap">16:00</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Twoje dane</h3>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Imię i nazwisko</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700" placeholder="Jan Kowalski">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Numer telefonu</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700" placeholder="+48 123 456 789">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Adres e-mail</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700" placeholder="jan.kowalski@example.com">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2 font-medium">Powód wizyty (opcjonalnie)</label>
+                            <textarea class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700 h-24" placeholder="Opisz krótko powód wizyty..."></textarea>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="text-sm text-gray-700">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu umówienia wizyty</span>
+                            </label>
+                        </div>
+
+                        <button class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Umów wizytę</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cennik -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cennik usług</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Zapoznaj się z cennikiem naszych usług medycznych. Oferujemy konkurencyjne ceny i wysoką jakość usług.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2">Konsultacje specjalistyczne</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Konsultacja kardiologiczna</span>
+                                <span class="font-semibold text-gray-800">200 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Konsultacja neurologiczna</span>
+                                <span class="font-semibold text-gray-800">220 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Konsultacja pediatryczna</span>
+                                <span class="font-semibold text-gray-800">180 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Konsultacja ortopedyczna</span>
+                                <span class="font-semibold text-gray-800">200 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Konsultacja okulistyczna</span>
+                                <span class="font-semibold text-gray-800">190 zł</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2">Badania diagnostyczne</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">EKG</span>
+                                <span class="font-semibold text-gray-800">80 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Echo serca</span>
+                                <span class="font-semibold text-gray-800">250 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">USG jamy brzusznej</span>
+                                <span class="font-semibold text-gray-800">200 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">RTG klatki piersiowej</span>
+                                <span class="font-semibold text-gray-800">120 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Badanie wzroku</span>
+                                <span class="font-semibold text-gray-800">100 zł</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2">Zabiegi i procedury</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Szczepienie</span>
+                                <span class="font-semibold text-gray-800">od 120 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Zdjęcie szwów</span>
+                                <span class="font-semibold text-gray-800">80 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Opatrunek</span>
+                                <span class="font-semibold text-gray-800">60 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Badanie krwi (podstawowe)</span>
+                                <span class="font-semibold text-gray-800">90 zł</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-gray-100">
+                                <span class="text-gray-700">Badanie moczu</span>
+                                <span class="font-semibold text-gray-800">50 zł</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Pobierz pełny cennik (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opinie Pacjentów -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Opinie naszych pacjentów</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Poznaj opinie pacjentów, którzy skorzystali z naszych usług medycznych.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 max-w-5xl mx-auto">
+                <div class="bg-white rounded-lg shadow-sm p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Jestem bardzo zadowolona z opieki medycznej w gabinecie MediCare. Dr Kowalska to profesjonalistka, która zawsze znajduje czas, aby dokładnie wyjaśnić diagnozę i odpowiedzieć na wszystkie pytania. Polecam!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <span class="text-gray-500 font-semibold">KM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Katarzyna Malinowska</h4>
+                            <p class="text-sm text-gray-500">Pacjent od 2018 roku</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Gabinet MediCare to miejsce, gdzie pacjent jest na pierwszym miejscu. Nowoczesny sprzęt, profesjonalna obsługa i przyjazna atmosfera. Dr Nowak to świetny specjalista, który postawił trafną diagnozę i skutecznie pomógł mi w leczeniu."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <span class="text-gray-500 font-semibold">AW</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Adam Wójcik</h4>
+                            <p class="text-sm text-gray-500">Pacjent od 2020 roku</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-fill ri-lg"></i>
+                            <i class="ri-star-half-fill ri-lg"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Bardzo dobra opieka pediatryczna dla mojego dziecka. Dr Wiśniewska ma świetne podejście do dzieci, a wizyta przebiega w miłej atmosferze. Gabinet jest nowoczesny i czysty. Polecam wszystkim rodzicom!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <span class="text-gray-500 font-semibold">MZ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Monika Zielińska</h4>
+                            <p class="text-sm text-gray-500">Pacjent od 2021 roku</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <div class="inline-flex items-center bg-white rounded-full px-2 py-1 shadow-sm">
+                    <span class="text-xl font-bold text-primary mr-2">4.9</span>
+                    <div class="text-yellow-400 flex">
+                        <i class="ri-star-fill ri-lg"></i>
+                        <i class="ri-star-fill ri-lg"></i>
+                        <i class="ri-star-fill ri-lg"></i>
+                        <i class="ri-star-fill ri-lg"></i>
+                        <i class="ri-star-half-fill ri-lg"></i>
+                    </div>
+                    <span class="text-gray-600 ml-2">z 246 opinii</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Kontaktowa -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Kontakt</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Skontaktuj się z nami, aby uzyskać więcej informacji lub umówić wizytę.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Dane kontaktowe</h3>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                    <i class="ri-map-pin-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Adres</h4>
+                                    <p class="text-gray-600">ul. Medyczna 12, 00-001 Warszawa</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                    <i class="ri-phone-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Telefon</h4>
+                                    <p class="text-gray-600">+48 123 456 789</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                    <i class="ri-mail-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">E-mail</h4>
+                                    <p class="text-gray-600">kontakt@medicare.pl</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 mt-1">
+                                    <i class="ri-time-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Godziny otwarcia</h4>
+                                    <p class="text-gray-600">Poniedziałek - Piątek: 8:00 - 20:00</p>
+                                    <p class="text-gray-600">Sobota: 9:00 - 14:00</p>
+                                    <p class="text-gray-600">Niedziela: Zamknięte</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Obserwuj nas</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-facebook-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-instagram-line ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-twitter-x-line ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Wyślij wiadomość</h3>
+
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Imię i nazwisko</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700" placeholder="Jan Kowalski">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Adres e-mail</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700" placeholder="jan.kowalski@example.com">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Temat</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700" placeholder="Temat wiadomości">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2 font-medium">Wiadomość</label>
+                            <textarea class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-700 h-32" placeholder="Treść wiadomości..."></textarea>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <span class="text-sm text-gray-700">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na wiadomość</span>
+                            </label>
+                        </div>
+
+                        <button class="w-full bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Wyślij wiadomość</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-5xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="h-80 bg-gray-200">
+                    <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Mapa lokalizacji" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot i Przycisk szybkiego kontaktu -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end space-y-4">
+        <div class="bg-white rounded-lg shadow-lg p-4 max-w-xs w-full hidden" id="chatbot">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-semibold text-gray-800">Wirtualny asystent</h3>
+                <button class="text-gray-500 hover:text-gray-700" id="close-chatbot">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="bg-gray-50 p-3 rounded mb-4 h-60 overflow-y-auto">
+                <div class="flex mb-3">
+                    <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-2 flex-shrink-0">
+                        <i class="ri-customer-service-2-line ri-sm text-white"></i>
+                    </div>
+                    <div class="bg-primary text-white p-2 rounded-lg rounded-tl-none max-w-[80%]">
+                        <p class="text-sm">Witaj! Jak mogę Ci pomóc?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <input type="text" class="flex-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-l text-gray-700 text-sm" placeholder="Napisz wiadomość...">
+                <button class="bg-primary text-white px-3 py-2 rounded-r !rounded-button whitespace-nowrap">
+                    <i class="ri-send-plane-fill ri-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <button class="w-14 h-14 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-opacity-90 transition-colors" id="chat-button">
+            <i class="ri-message-3-line ri-lg"></i>
+        </button>
+    </div>
+
+    <!-- Powiadomienie o cookies -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 z-30 flex flex-col md:flex-row items-center justify-between" id="cookie-notice">
+        <p class="text-gray-700 mb-4 md:mb-0 md:mr-4">Nasza strona używa plików cookies, aby zapewnić Ci najlepsze doświadczenia. Dowiedz się więcej w naszej <a href="#" class="text-primary hover:underline">Polityce prywatności</a>.</p>
+        <div class="flex space-x-4">
+            <button class="bg-gray-200 text-gray-700 px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-gray-300 transition-colors" id="reject-cookies">Odrzuć</button>
+            <button class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors" id="accept-cookies">Akceptuję</button>
+        </div>
+    </div>
+
+    <!-- Przycisk dostępności -->
+    <button class="fixed top-24 right-6 z-40 w-12 h-12 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-lg hover:bg-opacity-90 transition-colors" id="accessibility-button">
+        <i class="ri-wheelchair-line ri-lg"></i>
+    </button>
+
+    <!-- Panel dostępności -->
+    <div class="fixed top-24 right-6 z-40 bg-white rounded-lg shadow-lg p-4 w-64 hidden" id="accessibility-panel">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="font-semibold text-gray-800">Dostępność</h3>
+            <button class="text-gray-500 hover:text-gray-700" id="close-accessibility">
+                <i class="ri-close-line ri-lg"></i>
+            </button>
+        </div>
+
+        <div class="space-y-4">
+            <div>
+                <label class="flex items-center justify-between">
+                    <span class="text-gray-700">Zwiększ kontrast</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+
+            <div>
+                <label class="flex items-center justify-between">
+                    <span class="text-gray-700">Większa czcionka</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+
+            <div>
+                <label class="flex items-center justify-between">
+                    <span class="text-gray-700">Podświetl linki</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 mb-2">Rozmiar czcionki</label>
+                <input type="range" min="100" max="200" value="100" class="w-full">
+            </div>
+        </div>
+    </div>
+
+    <!-- Stopka (Footer) -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 block">MediCare</a>
+                    <p class="text-gray-300 mb-4">Profesjonalna opieka medyczna dla całej rodziny. Dbamy o Twoje zdrowie od 2010 roku.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="ri-twitter-x-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Szybkie linki</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Strona główna</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">O nas</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Usługi</a></li>
+                        <li><a href="#doctors" class="text-gray-300 hover:text-white transition-colors">Lekarze</a></li>
+                        <li><a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Cennik</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Usługi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Kardiologia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Neurologia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Pediatria</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Ortopedia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Okulistyka</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Diagnostyka</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-300 mb-4">Zapisz się do naszego newslettera, aby otrzymywać najnowsze informacje i promocje.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" class="flex-1 px-4 py-2 bg-gray-700 border border-gray-600 rounded-l text-white" placeholder="Twój adres e-mail">
+                            <button class="bg-primary text-white px-4 py-2 rounded-r !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-colors">Zapisz się</button>
+                        </div>
+                    </form>
+                    <p class="text-gray-300 text-sm">Akceptujemy płatności:</p>
+                    <div class="flex space-x-3 mt-2">
+                        <i class="ri-visa-fill ri-lg text-gray-300"></i>
+                        <i class="ri-mastercard-fill ri-lg text-gray-300"></i>
+                        <i class="ri-paypal-fill ri-lg text-gray-300"></i>
+                        <i class="ri-bank-card-fill ri-lg text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 MediCare. Wszelkie prawa zastrzeżone.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Polityka prywatności</a>
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Regulamin</a>
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Mapa strony</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Chatbot Toggle
+        const chatButton = document.getElementById('chat-button');
+        const chatbot = document.getElementById('chatbot');
+        const closeChatbot = document.getElementById('close-chatbot');
+
+        chatButton.addEventListener('click', () => {
+            chatbot.classList.toggle('hidden');
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            chatbot.classList.add('hidden');
+        });
+
+        // Cookie Notice
+        const cookieNotice = document.getElementById('cookie-notice');
+        const acceptCookies = document.getElementById('accept-cookies');
+        const rejectCookies = document.getElementById('reject-cookies');
+
+        acceptCookies.addEventListener('click', () => {
+            cookieNotice.classList.add('hidden');
+        });
+
+        rejectCookies.addEventListener('click', () => {
+            cookieNotice.classList.add('hidden');
+        });
+
+        // Accessibility Panel
+        const accessibilityButton = document.getElementById('accessibility-button');
+        const accessibilityPanel = document.getElementById('accessibility-panel');
+        const closeAccessibility = document.getElementById('close-accessibility');
+
+        accessibilityButton.addEventListener('click', () => {
+            accessibilityButton.classList.add('hidden');
+            accessibilityPanel.classList.remove('hidden');
+        });
+
+        closeAccessibility.addEventListener('click', () => {
+            accessibilityPanel.classList.add('hidden');
+            accessibilityButton.classList.remove('hidden');
+        });
+
+    </script>
+</body>
+
+</html>
